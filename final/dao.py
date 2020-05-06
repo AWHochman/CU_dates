@@ -1,7 +1,7 @@
 from db import db, Match, User, Community
 
 def get_all_users():
-    return [u.serialize() for u in User.query.all()]
+    return [u.serialize_no_mat() for u in User.query.all()]
 
 def create_user(name, age, bio):
     new_user = User(

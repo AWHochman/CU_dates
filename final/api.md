@@ -11,7 +11,6 @@ response:
             "name": "Austin",
             "age": 19,
             "bio": "",
-            "matches": [ <SERIALIZED MATCH>, ... ],
             "communities": [ <SERIALIZED COMMUNITY>, ... ]
         },
         {
@@ -19,16 +18,14 @@ response:
             "name": "Trey",
             "age": 19,
             "bio": "Austin's roommate",
-            "matches": [ <SERIALIZED MATCH>, ... ],
             "communities": [ <SERIALIZED COMMUNITY>, ... ]
         }
         ...
     ]
 }
 
-Note: In this case every match in the database that relates to a user will be
-returned in the response, not just the ones where mutual interest is shown
-between users.
+Note: Matches aren't retrieved in this case because I wanted to make that 
+information private.
 ________________________________________________________________________________
 
 Create a user
