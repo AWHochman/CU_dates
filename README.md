@@ -14,7 +14,7 @@ Many-to-many relationship:
 Create route:  
     - POST /api/users/ creates a user  
 Retrieve route:  
-    - GET /api/users/ retrieves all of the users
+    - GET /api/users/ retrieves all of the users  
 Update route:  
     - POST /api/users/{id}/browse/ if a match already exists in the Match table between the two users specified in the request then the accepted field of the match is updated to the value specified in the request  
 Delete route:  
