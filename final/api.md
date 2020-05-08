@@ -24,7 +24,7 @@ response:
     ]
 }
 
-Note: Matches aren't retrieved in this case because I wanted to make that 
+Note: Matches aren't retrieved in this case because I wanted to make that
 information private.
 ________________________________________________________________________________
 
@@ -110,8 +110,8 @@ response:
     }
 }
 
-Note: I wrote the backend so that when someone goes to browse potential matches:
-    - they won't see anyone they've seen on browse before
+Note: I wrote the backend so that when someone goes to browse potential matches:  
+    - they won't see anyone they've seen on browse before  
     - if personA has seen personB on browse and did not "swipe right" then
     personA will not show up when personB is browsing potential matches
 ________________________________________________________________________________
@@ -127,7 +127,7 @@ request:
 }
 
 {
-    "success": true, 
+    "success": true,
     "data": {
         "data": {
         "id": 9,
@@ -140,14 +140,14 @@ request:
 
 Note: user2_id is the ID of the person the user who is browsing wants to "swipe"
 on. "Accepted" is a boolean value. There are a few possibilities based on the
-value of "accepted" in the response:
-    -If "accepted" is set to False and the match already exists in the Match table
-        -The match's column for accepted is set to false
-    -If "accepted" is set to False and the match does not exist in the table
-        -A new match is created and its accepted column is false
-    -If "accepted" is set to True and the match is not in the table
-        -A new match is created with its accepted column set to null
-    -If "accepted" is set to True and the match is in the table
+value of "accepted" in the response:  
+    -If "accepted" is set to False and the match already exists in the Match table  
+        -The match's column for accepted is set to false  
+    -If "accepted" is set to False and the match does not exist in the table  
+        -A new match is created and its accepted column is false  
+    -If "accepted" is set to True and the match is not in the table  
+        -A new match is created with its accepted column set to null  
+    -If "accepted" is set to True and the match is in the table  
         -The match's accepted column is updated from null to true
 ________________________________________________________________________________
 
@@ -181,10 +181,10 @@ response:
     ]
 }
 
-Note: Members are serialized without the communities they are a member of. 
+Note: Members are serialized without the communities they are a member of.
 ________________________________________________________________________________
 
-Join a community 
+Join a community
 
 POST /api/users/{user_id}/communities/{community_id}/
 
@@ -214,9 +214,9 @@ response:
 Note: The communites are serialized without members.
 ________________________________________________________________________________
 
-Browse potential matches by community 
+Browse potential matches by community
 
-GET /api/users/{user_id}/browse/{community_id}/ 
+GET /api/users/{user_id}/browse/{community_id}/
 
 response:
 {
@@ -229,8 +229,8 @@ response:
     }
 }
 
-Note: This works the same way as the other browse route except it only filters through 
-the members of the specified community. 
+Note: This works the same way as the other browse route except it only filters through
+the members of the specified community.
 ________________________________________________________________________________
 
 Create a match with someone from a specific community
@@ -243,9 +243,9 @@ request:
     "accepted": <USER INPUT>
 }
 
-response: 
+response:
 {
-    "success": true, 
+    "success": true,
     "data": {
         "data": {
         "id": 9,
@@ -256,4 +256,4 @@ response:
     }
 }
 
-Note: this works pretty much exactly the same as the match route above. 
+Note: this works pretty much exactly the same as the match route above.
