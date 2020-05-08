@@ -111,8 +111,8 @@ response:
 }
 
 Note: I wrote the backend so that when someone goes to browse potential matches:  
-    - they won't see anyone they've seen on browse before  
-    - if personA has seen personB on browse and did not "swipe right" then
+    &nbsp;&nbsp;&nbsp;- they won't see anyone they've seen on browse before  
+    &nbsp;&nbsp;&nbsp;- if personA has seen personB on browse and did not "swipe right" then
     personA will not show up when personB is browsing potential matches
 ________________________________________________________________________________
 
@@ -141,14 +141,14 @@ request:
 Note: user2_id is the ID of the person the user who is browsing wants to "swipe"
 on. "Accepted" is a boolean value. There are a few possibilities based on the
 value of "accepted" in the response:  
-    -If "accepted" is set to False and the match already exists in the Match table  
-        -The match's column for accepted is set to false  
-    -If "accepted" is set to False and the match does not exist in the table  
-        -A new match is created and its accepted column is false  
-    -If "accepted" is set to True and the match is not in the table  
-        -A new match is created with its accepted column set to null  
-    -If "accepted" is set to True and the match is in the table  
-        -The match's accepted column is updated from null to true
+    &nbsp;&nbsp;&nbsp;-If "accepted" is set to False and the match already exists in the Match table  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-The match's column for accepted is set to false  
+    &nbsp;&nbsp;&nbsp;-If "accepted" is set to False and the match does not exist in the table  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-A new match is created and its accepted column is false  
+    &nbsp;&nbsp;&nbsp;-If "accepted" is set to True and the match is not in the table  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-A new match is created with its accepted column set to null  
+    &nbsp;&nbsp;&nbsp;-If "accepted" is set to True and the match is in the table  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-The match's accepted column is updated from null to true
 ________________________________________________________________________________
 
 Get matches for user by ID
