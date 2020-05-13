@@ -3,6 +3,7 @@ Get all users
 GET /api/users/
 
 response:
+```json
 {
     "success": true,
     "data": [
@@ -23,6 +24,7 @@ response:
         ...
     ]
 }
+```
 
 Note: Matches aren't retrieved in this case because I wanted to make that
 information private.
@@ -33,13 +35,16 @@ Create a user
 POST /api/users/
 
 request:
+```json
 {
     "name": <USER INPUT>,
     "age": <USER INPUT>,
     "bio": <USER INPUT>
 }
+```
 
 response:
+```json
 {
     "success": true,
     "data": {
@@ -51,6 +56,7 @@ response:
         "communities": []
     }
 }
+```
 ________________________________________________________________________________
 
 Get a user by ID
@@ -58,6 +64,7 @@ Get a user by ID
 GET /api/users/{id}/
 
 response:
+```json
 {
     "success": true,
     "data": {
@@ -69,6 +76,7 @@ response:
         "communities": [ <SERIALIZED COMMUNITY>, ... ]
     }
 }
+```
 
 Note: In this case only matches where mutual interest has been shown will be
 returned in the response.
@@ -79,6 +87,7 @@ Delete a user by ID
 DELETE /api/users/{id}/
 
 response:
+```json
 {
     "success": true,
     "data": {
@@ -90,6 +99,7 @@ response:
         "communities": [ <SERIALIZED COMMUNITY>, ... ]
     }
 }
+```
 
 Note: In this case, like GET /api/users/, all matches are returned in the
 response, not just ones with mutual interest.
@@ -100,6 +110,7 @@ Browse through potential matches
 GET /api/users/{id}/browse/
 
 response:
+```json
 {
     "success": true,
     "data": {
@@ -109,6 +120,7 @@ response:
         "bio": ""
     }
 }
+```
 
 Note: I wrote the backend so that when someone goes to browse potential matches:  
     &nbsp;&nbsp;&nbsp;- they won't see anyone they've seen on browse before  
@@ -121,11 +133,15 @@ Create a match
 POST /api/users/{id}/browse/
 
 request:
+```json
 {
     "user2_id: <USER INPUT>,
     "accepted": <USER INPUT>
 }
+```
 
+response:
+```json
 {
     "success": true,
     "data": {
@@ -137,6 +153,7 @@ request:
     }
     }
 }
+```
 
 Note: user2_id is the ID of the person the user who is browsing wants to "swipe"
 on. "Accepted" is a boolean value. There are a few possibilities based on the
@@ -156,10 +173,12 @@ Get matches for user by ID
 GET /api/users/{id}/matches/
 
 response:
+```json
 {
     "success": true,
     "data": [ <SERIALIZED MATCH>, ... ]
 }
+```
 
 Note: Only matches where mutual interest has been shown will be returned.
 ________________________________________________________________________________
@@ -169,6 +188,7 @@ Get all communities
 GET /api/communities/
 
 response:
+```json
 {
     "success": true,
     "data": [
@@ -180,6 +200,7 @@ response:
         ...
     ]
 }
+```
 
 Note: Members are serialized without the communities they are a member of.
 ________________________________________________________________________________
@@ -191,6 +212,7 @@ POST /api/users/{user_id}/communities/{community_id}/
 request: n/a
 
 response:
+```json
 {
     "success": true,
     "data": {
@@ -210,6 +232,7 @@ response:
     }
     }
 }
+```
 
 Note: The communites are serialized without members.
 ________________________________________________________________________________
@@ -219,6 +242,7 @@ Browse potential matches by community
 GET /api/users/{user_id}/browse/{community_id}/
 
 response:
+```json
 {
     "success": true,
     "data": {
@@ -228,6 +252,7 @@ response:
         "bio": "no bio"
     }
 }
+```
 
 Note: This works the same way as the other browse route except it only filters through
 the members of the specified community.
@@ -238,6 +263,7 @@ Create a match with someone from a specific community
 POST /api/users/{user_id}/browse/{community_id}/
 
 request:
+```json
 {
     "user2_id": <USER INPUT>,
     "accepted": <USER INPUT>
@@ -255,5 +281,6 @@ response:
     }
     }
 }
+```
 
-Note: this works pretty much exactly the same as the match route above.
+Note: this works exactly the same as the match route above but between members of the same community.
