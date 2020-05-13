@@ -135,7 +135,7 @@ POST /api/users/{id}/browse/
 request:
 ```json
 {
-    "user2_id: <USER INPUT>,
+    "user2_id": <USER INPUT>,
     "accepted": <USER INPUT>
 }
 ```
