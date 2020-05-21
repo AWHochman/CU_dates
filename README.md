@@ -5,7 +5,7 @@ specifications we have been given in this course. Other than that I've
 listed below a feature that satisfies each requirement to try and make
 grading easier.
 
-Server IP: http://34.75.199.194/
+Server IP: http://34.75.199.194/ (No longer runnning)
 
 One-to-many relationship:  
     &nbsp;&nbsp;&nbsp;- Each user in the User table can be associated with many matches from the Match table  
